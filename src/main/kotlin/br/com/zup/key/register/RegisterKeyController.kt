@@ -1,8 +1,10 @@
-package br.com.zup.key
+package br.com.zup.key.register
 
 import br.com.zup.KeyManagerGRPCServiceGrpc
 import br.com.zup.KeyType
 import br.com.zup.RegisterKeyRequest
+import br.com.zup.key.register.NewKeyRequest
+import br.com.zup.key.register.PixKeyResponse
 import io.grpc.Status
 import io.grpc.StatusRuntimeException
 import io.micronaut.http.HttpResponse
@@ -18,7 +20,7 @@ import javax.validation.Valid
 
 @Validated
 @Controller("/api/v1/key")
-class KeyController(@Inject val grpcClient: KeyManagerGRPCServiceGrpc.KeyManagerGRPCServiceBlockingStub) {
+class RegisterKeyController(@Inject val grpcClient: KeyManagerGRPCServiceGrpc.KeyManagerGRPCServiceBlockingStub) {
 
     @Post("/register/{clientId}")
     fun registerKey(@Body @Valid request: NewKeyRequest, @PathVariable clientId: String): HttpResponse<PixKeyResponse>{

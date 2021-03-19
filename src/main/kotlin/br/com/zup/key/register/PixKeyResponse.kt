@@ -1,4 +1,4 @@
-package br.com.zup.key
+package br.com.zup.key.register
 
 import io.micronaut.core.annotation.Introspected
 

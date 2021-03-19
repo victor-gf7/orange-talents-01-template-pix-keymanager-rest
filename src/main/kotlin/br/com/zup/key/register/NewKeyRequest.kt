@@ -1,4 +1,4 @@
-package br.com.zup.key
+package br.com.zup.key.register
 
 import br.com.zup.AccountType
 import br.com.zup.KeyType
