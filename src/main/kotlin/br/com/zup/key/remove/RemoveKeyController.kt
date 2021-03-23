@@ -1,6 +1,6 @@
 package br.com.zup.key.remove
 
-import br.com.zup.KeyManagerGRPCServiceGrpc
+import br.com.zup.KeyManagerRemoveGRPCServiceGrpc
 import br.com.zup.RemoveKeyRequest
 import io.grpc.Status
 import io.grpc.StatusRuntimeException
@@ -17,7 +17,7 @@ import javax.validation.Valid
 
 @Validated
 @Controller("/api/v1/key")
-class RemoveKeyController(@Inject val grpcClient: KeyManagerGRPCServiceGrpc.KeyManagerGRPCServiceBlockingStub) {
+class RemoveKeyController(@Inject val grpcClient: KeyManagerRemoveGRPCServiceGrpc.KeyManagerRemoveGRPCServiceBlockingStub) {
 
     @Delete("/remove/{pixId}")
     fun removeKey(@Body @Valid request: RemoveRequest, @PathVariable pixId: String): HttpResponse<RemoveResponse> {
