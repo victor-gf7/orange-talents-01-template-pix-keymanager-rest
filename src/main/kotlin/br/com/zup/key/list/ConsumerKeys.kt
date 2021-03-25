@@ -5,5 +5,5 @@ import io.micronaut.core.annotation.Introspected
 @Introspected
 data class ConsumerKeys(
     val clientId: String?,
-    val pixId: List<ConsumerListKeysResponse>
+    val pixKey: List<ConsumerListKeysResponse>
 )

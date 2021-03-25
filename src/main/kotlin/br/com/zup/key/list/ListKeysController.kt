@@ -31,7 +31,7 @@ class ListKeysController(
         val consumerKeys = grpcClient.listKeys(requestGrpc).let { responseGrpc ->
             ConsumerKeys(
                 clientId = responseGrpc.clientId,
-                pixId = responseGrpc.keysList.map {
+                pixKey = responseGrpc.keysList.map {
                     val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
                     val instant: Instant = Instant.ofEpochSecond(
                         it.createdAt.seconds,
